@@ -4,3 +4,32 @@ layout: base
 <h1>Mushu movies</h1>
 
 <p>Hello world!</p>
+
+<search>
+  <form>
+    <div>
+      <label for="table-search-input">Search:</label>
+    </div>
+    <div>
+      <input type="search" id="table-search-input" placeholder="Filter the table..." onkeyup="filterTable()">
+    </div>
+  </form>
+</search>
+
+<table id="search-table">
+  <caption>Showing <span id="visible-items-count">{{ site.data.movies.size }}</span> movies of {{ site.data.movies.size }}.</caption>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for movie in site.data.movies %}
+    <tr>
+      <td>{{ movie.title }}</td>
+      <td>{{ movie.date }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>

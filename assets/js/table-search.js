@@ -2,7 +2,7 @@ function filterTable() {
   const searchInput = document.getElementById("table-search-input");
   const searchString = searchInput.value.toLowerCase();
   const searchTerms = searchString.replace(/\s+/g, " ").trim().split(" ");
-  const table = document.getElementById("emote-table");
+  const table = document.getElementById("search-table");
   const rows = table.getElementsByTagName("tr");
   let visibleRows = 0;
   // Start search on all rows from second row onwards, to skip headers
@@ -26,8 +26,8 @@ function filterTable() {
       row.style.display = "none";
     }
   }
-  // Update the shown emotes counter
-  const counter = document.getElementById("visible-emote-count");
+  // Update the shown items counter
+  const counter = document.getElementById("visible-items-count");
   counter.textContent = visibleRows;
 }
 
